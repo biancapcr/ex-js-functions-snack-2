@@ -1,0 +1,4 @@
+// arrow function del quadrato di un numero
+const quadrato = (n) => n * n;
+
+console.log(quadrato(4)); // 16

@@ -1,0 +1,18 @@
+// funzione dichiarativa
+function somma(a, b) {
+  return a + b;
+}
+
+console.log(somma(2, 6)); // 8
+
+// funzione anonima assegnata a una variabile
+const somma = function (a, b) {
+  return a + b;
+};
+
+console.log(somma(2, 6)); // 8
+
+// stessa funzione sotto forma di arrow function
+const somma = (a, b) => a + b;
+
+console.log(somma(2, 6)); // 8

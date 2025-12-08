@@ -1,0 +1,10 @@
+const somma = (a, b) => a + b;
+const moltiplica = (a, b) => a * b;
+
+// funzione higher order:
+// - due numeri (a, b)
+// - una funzione di operazione (callback)
+const eseguiOperazione = (a, b, operazione) => operazione(a, b);
+
+console.log(eseguiOperazione(3, 4, somma)); // 7
+console.log(eseguiOperazione(3, 4, moltiplica)); // 12
