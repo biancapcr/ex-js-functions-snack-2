@@ -1,0 +1,8 @@
+function stampaOgniSecondo(messaggio) {
+  setInterval(() => {
+    console.log(messaggio);
+  }, 1000); // ogni 1 secondo
+}
+
+// uso della funzione
+stampaOgniSecondo("Ciao");
