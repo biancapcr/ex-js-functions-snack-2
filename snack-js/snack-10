@@ -1,0 +1,27 @@
+function creaThrottler(funzione, limite) {
+  // variabile per sapere se la funzione è “bloccata”
+  let pronto = true;
+
+  // ritorno una nuova funzione (closure)
+  return function () {
+    // se è pronta, esegue la funzione originale
+    if (pronto) {
+      funzione(); // esegue la callback
+      pronto = false; // la blocco temporaneamente
+
+      // dopo 'limite' ms, viene sbloccata
+      setTimeout(() => {
+        pronto = true;
+      }, limite);
+    } else {
+      console.log("⏳ Ignorato (troppo presto)");
+    }
+  };
+}
+
+// esempio
+const throttledLog = creaThrottler(() => console.log("Eseguito!"), 2000);
+
+throttledLog(); // ✅ subito
+throttledLog(); // ❌ Ignorato (troppo presto)
+setTimeout(throttledLog, 2500); // ✅ dopo 2.5s
