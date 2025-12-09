@@ -1,0 +1,13 @@
+function creaTimer(tempo) {
+  // la funzione esterna accetta un tempo in millisecondi
+  return function () {
+    // la funzione interna usa quel tempo
+    setTimeout(() => {
+      console.log("Tempo scaduto");
+    }, tempo);
+  };
+}
+
+// uso della funzione
+const timer3s = creaTimer(3000); // creazione di un timer di 3 secondi
+timer3s(); // dopo 3 secondi => "Tempo scaduto"
