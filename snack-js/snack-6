@@ -1,0 +1,22 @@
+function creaContatoreAutomatico(intervallo) {
+  // creazione di una variabile interna "contatore" che sarà ricordata dalla funzione interna (closure)
+  let contatore = 0;
+
+  // la funzione esterna ritorna una nuova funzione che, quando viene chiamata, avvia un setInterval
+  return function () {
+    // avvio del setInterval con l’intervallo passato come parametro
+    setInterval(() => {
+      // a ogni intervallo, incremento il contatore
+      contatore++;
+
+      // stampo il valore aggiornato
+      console.log(contatore);
+    }, intervallo);
+  };
+}
+
+// creo un contatore con intervallo di 1 secondo (1000 ms)
+const contatore = creaContatoreAutomatico(1000);
+
+// avvio del contatore
+contatore(); // stampa: 1, 2, 3, 4, 5... ogni secondo
