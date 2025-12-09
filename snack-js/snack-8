@@ -1,0 +1,19 @@
+function contoAllaRovescia(n) {
+  // creazione di una variabile che tiene il valore attuale del conto
+  let numero = n;
+
+  // avvio di un intervallo che si ripete ogni secondo
+  const timer = setInterval(() => {
+    console.log(numero); // stampa il numero attuale
+    numero--; // diminuisce di 1
+
+    // quando arrivo a 0, il timer si ferma
+    if (numero < 0) {
+      clearInterval(timer);
+      console.log("Tempo scaduto");
+    }
+  }, 1000);
+}
+
+// esempio
+contoAllaRovescia(5);
