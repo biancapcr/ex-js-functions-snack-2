@@ -1,0 +1,22 @@
+function sequenzaOperazioni(operazioni, intervallo) {
+  // ciclo tra tutte le funzioni nell’array
+  operazioni.forEach((operazione, indice) => {
+    // calcolo del ritardo per ogni operazione
+    const ritardo = indice * intervallo;
+
+    // uso di setTimeout per eseguirla dopo quel ritardo
+    setTimeout(() => {
+      operazione(); // esegue la funzione
+    }, ritardo);
+  });
+}
+
+// esempio
+sequenzaOperazioni(
+  [
+    () => console.log("Operazione 1"),
+    () => console.log("Operazione 2"),
+    () => console.log("Operazione 3"),
+  ],
+  2000
+);
