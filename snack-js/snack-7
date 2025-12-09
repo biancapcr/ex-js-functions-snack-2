@@ -1,0 +1,18 @@
+function eseguiEferma(messaggio, tempoAvvio, tempoStop) {
+  // dopo "tempoAvvio" millisecondi, parte
+  setTimeout(() => {
+    // avvio un setInterval che stampa il messaggio ogni secondo
+    const intervallo = setInterval(() => {
+      console.log(messaggio);
+    }, 1000);
+
+    // dopo "tempoStop" millisecondi fermo l’intervallo con clearInterval
+    setTimeout(() => {
+      clearInterval(intervallo);
+      console.log("⏹ Timer fermato!");
+    }, tempoStop);
+  }, tempoAvvio);
+}
+
+// esempio di uso: parte dopo 2 secondi, stampa ogni secondo e si ferma dopo 5 secondi
+eseguiEferma("Ciao", 2000, 5000);
